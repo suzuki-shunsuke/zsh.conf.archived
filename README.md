@@ -1,7 +1,9 @@
-# zsh-config
+# zsh.conf
+
+hubが導入済みな前提
 
 ```
-git clone https://github.com/b4b4r07/zplug ~/.zplug
-git clone git@github.com:suzuki-shunsuke/zsh-config.git ~/.zsh
+$ git clone b4b4r07/zplug ~/.zplug
+$ git clone suzuki-shunsuke/zsh.conf ~/.zsh
 ln -s ~/.zsh/.zshrc ~/.zshrc
 ```
