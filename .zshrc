@@ -1,12 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if [ ! -f ~/.zplug/zplug ]
+if [ -f ~/.zplug/zplug ]
 then
-    if builtin command -v git > /dev/null; then
-        git clone https://github.com/b4b4r07/zplug ~/.zplug
-        source ~/.zplug/zplug
-    fi
-else
     source ~/.zplug/zplug
 fi
 
