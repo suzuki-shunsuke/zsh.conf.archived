@@ -59,20 +59,21 @@ export PATH="$GOPATH/bin:$PATH"
 # XDG Base Direcotry Specification
 export XDG_CONFIG_HOME=$HOME/.config
 
+# dckrm
+export DCKRM_EDITOR="vim"
+
+# zmv
+autoload -Uz zmv
+
+# uvbm
+export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
+
+
 # # cabal(Haskell package manager)
 # if [ -d $HOME/.cabal/bin ]
 # then
 #     export PATH="$HOME/.cabal/bin:$PATH"
 # fi
-# 
-# function docker-rm() {
-#     # Docker コンテナを正規表現によってまとめて削除する関数
-#     # 正規表現なのでスラッシュなどの特殊文字の扱いに注意(必要ならエスケープ)
-#     # ex:
-#     #   docker-rm kics
-#     docker ps -a | grep $1 | cut -f 1 -d ' ' | xargs docker rm
-#     return 0
-# }
 # 
 # function notify() {
 #     # 直前のコマンドのステータスを見て、通知を行う
