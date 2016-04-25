@@ -68,6 +68,11 @@ autoload -Uz zmv
 # uvbm
 export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
 
+# dircolors
+if [ -f ~/.colorrc ]
+then
+    eval `dircolors ~/.colorrc`
+fi
 
 # # cabal(Haskell package manager)
 # if [ -d $HOME/.cabal/bin ]
