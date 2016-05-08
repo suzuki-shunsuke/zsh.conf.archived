@@ -10,6 +10,11 @@ then
     zplug "plugins/git", from:oh-my-zsh, if:"which git"
     zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "themes/af-magic", from:oh-my-zsh
+    zplug "zsh-users/zsh-completions"
+    # compinit 以降に読み込むようにロードの優先度を変更する（10~19にすれば良い）
+    zplug "zsh-users/zsh-syntax-highlighting", nice:10
+    zplug "mollifier/cd-gitroot"
+    zplug "mollifier/anyframe"
 
     # local plugins
     # pyenv
@@ -64,6 +69,10 @@ export DCKRM_EDITOR="vim"
 
 # zmv
 autoload -Uz zmv
+
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
 
 # uvbm
 export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
