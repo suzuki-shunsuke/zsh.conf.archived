@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZPLUG_HOME=$HOME/.zplug
 
 export ZPLUG_CLONE_DEPTH=1
 unset ZPLUG_SHALLOW
