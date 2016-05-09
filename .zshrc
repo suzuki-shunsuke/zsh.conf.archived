@@ -1,6 +1,14 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZPLUG_HOME=$HOME/.zplug
 
+export HISTSIZE=1000
+export HISTFILE=~/.zsh_history
+
+autoload -Uz compinit
+autoload -Uz colors
+compinit
+
+# source ~/.zsh/zplug.zsh
+export ZPLUG_HOME=$HOME/.zplug
 export ZPLUG_CLONE_DEPTH=1
 unset ZPLUG_SHALLOW
 
@@ -9,15 +17,11 @@ then
     source ~/.zplug/init.zsh
 fi
 
-autoload -Uz compinit
-autoload -Uz colors
-compinit
-
 if [ $ZPLUG_HOME ]
 then
     zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
     zplug "plugins/command-not-found", from:oh-my-zsh
-    # zplug "themes/aussiegeek", from:oh-my-zsh
+    # zplug "themes/af-magic", from:oh-my-zsh
     zplug "zsh-users/zsh-completions"
     # compinit 以降に読み込むようにロードの優先度を変更する（10~19にすれば良い）
     zplug "zsh-users/zsh-syntax-highlighting", nice:10
@@ -27,14 +31,16 @@ then
     zplug "sindresorhus/pure", use:pure.zsh, nice:10
 
     # local plugins
-    # pyenv
     zplug "~/.zsh", use:pyenv.zsh, from:local
-    # rbenv
     zplug "~/.zsh", use:rbenv.zsh, from:local
-    # nvm
     # zplug "~/.zsh", use:nvm.zsh, from:local
-    # direnv
-    zplug "~/.zsh", use:direnv.zsh, from:local
+    # zplug "~/.zsh", use:go.zsh, from:local
+    # zplug "~/.zsh", use:direnv.zsh, from:local
+    # zplug "~/.zsh", use:vim.zsh, from:local
+    # zplug "~/.zsh", use:hub.zsh, from:local
+    # zplug "~/.zsh", use:fzf.zsh, from:local
+    # zplug "~/.zsh", use:dckrm.zsh, from:local
+    # zplug "~/.zsh", use:dircolors.zsh, from:local
 
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -52,33 +58,17 @@ alias sudo="sudo -E"
 
 bindkey -v
 
-if builtin command -v vim > /dev/null; then
-    alias vi="vim"
-fi
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-if builtin command -v hub > /dev/null; then
-    eval "$(hub alias -s)"
-fi
- 
 # Heroku
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Go
-export PATH="/usr/local/go/bin:$PATH"
-export GOPATH=$HOME/.go
-export PATH="$GOPATH/bin:$PATH"
+# zmv
+autoload -Uz zmv
 
 # XDG Base Direcotry Specification
 export XDG_CONFIG_HOME=$HOME/.config
-
-# dckrm
-export DCKRM_EDITOR="vim"
-
-# zmv
-autoload -Uz zmv
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -87,13 +77,37 @@ add-zsh-hook chpwd chpwd_recent_dirs
 # uvbm
 export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# dckrm
+if builtin command -v vim > /dev/null; then
+    export DCKRM_EDITOR="vim"
+fi
+
+# vim
+if builtin command -v vim > /dev/null; then
+    alias vi="vim"
+fi
 
 # dircolors
 if [ -f ~/.colorrc ]
 then
     eval `dircolors ~/.colorrc`
+fi
+
+# Go
+export GOPATH=$HOME/.go
+export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
+
+# direnv
+if builtin command -v direnv > /dev/null ; then
+    eval "$(direnv hook zsh)"
+fi
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# hub
+if builtin command -v hub > /dev/null; then
+    eval "$(hub alias -s)"
 fi
 
 # # cabal(Haskell package manager)
