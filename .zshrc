@@ -112,6 +112,12 @@ if builtin command -v hub > /dev/null; then
     eval "$(hub alias -s)"
 fi
 
+# anyframe
+bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+bindkey '^xg' anyframe-widget-cd-ghq-repository
+bindkey '^xf' anyframe-widget-insert-filename
+
 # # cabal(Haskell package manager)
 # if [ -d $HOME/.cabal/bin ]
 # then
