@@ -2,6 +2,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export HISTSIZE=1000
 export HISTFILE=~/.zsh_history
+export SAVEHIST=100000
 
 autoload -Uz compinit
 autoload -Uz colors
@@ -55,6 +56,7 @@ fi
 eval `ssh-agent` > /dev/null
 
 alias sudo="sudo -E"
+alias ls="ls --color=auto"
 
 bindkey -v
 
