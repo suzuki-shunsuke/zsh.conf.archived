@@ -63,11 +63,12 @@ bindkey -v
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-# npm run
-alias grunt='npm run grunt'
-alias gulp='npm run gulp'
-alias webpack='npm run webpack'
-alias babel='npm run babel'
+# npm run aliases
+NPM_ALIASES=(grunt gulp webpack babel mocha)
+for i in $NPM_ALIASES
+do
+    alias $i="npm run $i"
+done
 
 # Heroku
 export PATH="/usr/local/heroku/bin:$PATH"
