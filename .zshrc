@@ -96,6 +96,11 @@ if builtin command -v vim > /dev/null; then
     alias vi="vim"
 fi
 
+# packer-io
+if builtin command -v packer-io > /dev/null; then
+    alias packer="packer-io"
+fi
+
 # dircolors
 if [ -f ~/.colorrc ]
 then
