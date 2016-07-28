@@ -64,7 +64,7 @@ bindkey -v
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # npm run aliases
-NPM_ALIASES=(babel bower eslint grunt gulp mocha rollup webpack)
+NPM_ALIASES=(babel bower eslint grunt gulp mocha rollup webpack webpack-dev-server)
 for i in $NPM_ALIASES
 do
     alias $i="npm run $i"
