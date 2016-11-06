@@ -21,18 +21,6 @@ then
     zplug "mafredri/zsh-async", on:sindresorhus/pure
     zplug "sindresorhus/pure", use:pure.zsh, nice:10
 
-    # local plugins
-    zplug "~/.zsh", use:pyenv.zsh, from:local
-    zplug "~/.zsh", use:rbenv.zsh, from:local
-    # zplug "~/.zsh", use:nvm.zsh, from:local
-    # zplug "~/.zsh", use:go.zsh, from:local
-    # zplug "~/.zsh", use:direnv.zsh, from:local
-    # zplug "~/.zsh", use:vim.zsh, from:local
-    # zplug "~/.zsh", use:hub.zsh, from:local
-    # zplug "~/.zsh", use:fzf.zsh, from:local
-    # zplug "~/.zsh", use:dckrm.zsh, from:local
-    # zplug "~/.zsh", use:dircolors.zsh, from:local
-
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
         if read -q; then
