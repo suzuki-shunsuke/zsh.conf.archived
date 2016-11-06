@@ -6,7 +6,6 @@ export HISTFILE=~/.zsh_history
 export SAVEHIST=100000
 
 export ZPLUG_HOME=$HOME/.zplug
-export ZPLUG_CLONE_DEPTH=1
 unset ZPLUG_SHALLOW
 
 # nodebrew

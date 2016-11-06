@@ -8,6 +8,8 @@ then
     source ~/.zplug/init.zsh
 fi
 
+zstyle :zplug:tag depth 1
+
 if [ $ZPLUG_HOME ]
 then
     zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
