@@ -1,17 +1,7 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-export HISTSIZE=1000
-export HISTFILE=~/.zsh_history
-export SAVEHIST=100000
 
 autoload -Uz compinit
 autoload -Uz colors
 compinit
-
-# source ~/.zsh/zplug.zsh
-export ZPLUG_HOME=$HOME/.zplug
-export ZPLUG_CLONE_DEPTH=1
-unset ZPLUG_SHALLOW
 
 if [ -f ~/.zplug/init.zsh ]
 then
@@ -60,31 +50,19 @@ alias ls="ls --color=auto"
 
 bindkey -v
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # npm run aliases
-NPM_ALIASES=(babel bower eslint express grunt gulp mocha rollup webpack webpack-dev-server)
+NPM_ALIASES=(babel bower eslint express grunt gulp mocha rollup webpack webpack-dev-server pm2)
 for i in $NPM_ALIASES
 do
     alias $i="npm run $i"
 done
 
-# Heroku
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # zmv
 autoload -Uz zmv
-
-# XDG Base Direcotry Specification
-export XDG_CONFIG_HOME=$HOME/.config
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
-
-# uvbm
-export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
 
 # dckrm
 if builtin command -v vim > /dev/null; then
@@ -106,10 +84,6 @@ if [ -f ~/.colorrc ]
 then
     eval `dircolors ~/.colorrc`
 fi
-
-# Go
-export GOPATH=$HOME/.go
-export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
 
 # direnv
 if builtin command -v direnv > /dev/null ; then
@@ -153,3 +127,6 @@ bindkey '^xf' anyframe-widget-insert-filename
 # if type zprof > /dev/null 2>&1; then
 #   zprof | less
 # fi
+
+# GVM(Go Version Manager)
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
