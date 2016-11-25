@@ -41,7 +41,7 @@ alias ls="ls --color=auto"
 bindkey -v
 
 # npm run aliases
-NPM_ALIASES=(babel bower eslint express grunt gulp mocha rollup webpack webpack-dev-server pm2)
+NPM_ALIASES=(babel bower esdoc eslint express grunt gulp mocha rollup webpack webpack-dev-server pm2)
 for i in $NPM_ALIASES
 do
     alias $i="npm run $i"
