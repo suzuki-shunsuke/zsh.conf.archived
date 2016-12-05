@@ -42,3 +42,14 @@ if [ -d $HOME/.rbenv/bin ]
 then
     eval "$(rbenv init -)"
 fi
+
+# SSH Agentの設定
+# 既に環境変数SSH_AUTH_SOCK が設定されていたら
+# ssh-agentが起動しているものとして何もしない
+# SSH_AUTH_SOCKが設定されていなかったら
+# ssh-agentを起動してSSH_AUTH_SOCKを設定する
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+    eval `ssh-agent` > /dev/null
+    export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+fi

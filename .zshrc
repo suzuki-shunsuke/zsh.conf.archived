@@ -33,8 +33,6 @@ then
     zplug load  # --verbose
 fi
 
-eval `ssh-agent` > /dev/null
-
 alias sudo="sudo -E"
 alias ls="ls --color=auto"
 
