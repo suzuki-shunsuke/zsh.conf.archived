@@ -1,3 +1,8 @@
+# Mac
+# path_helper を呼び出していた /etc/profile を読み込まない
+# 環境変数の上書き防止
+setopt no_global_rcs
+
 # zmodload zsh/zprof
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -53,3 +58,10 @@ then
     eval `ssh-agent` > /dev/null
     export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 fi
+
+# Mac
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+# Mac Android Debug Bridge
+# PATH="/Users/suzuki.shunsuke/Library/Android/sdk/platform-tools"

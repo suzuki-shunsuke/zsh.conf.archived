@@ -34,7 +34,7 @@ then
 fi
 
 alias sudo="sudo -E"
-alias ls="ls --color=auto"
+alias ls="gls --color=auto"
 
 bindkey -v
 
