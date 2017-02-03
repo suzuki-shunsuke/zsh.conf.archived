@@ -17,11 +17,11 @@ then
     # zplug "themes/af-magic", from:oh-my-zsh
     zplug "zsh-users/zsh-completions"
     # compinit 以降に読み込むようにロードの優先度を変更する（10~19にすれば良い）
-    zplug "zsh-users/zsh-syntax-highlighting", nice:10
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
     zplug "mollifier/cd-gitroot"
     zplug "mollifier/anyframe"
     zplug "mafredri/zsh-async", on:sindresorhus/pure
-    zplug "sindresorhus/pure", use:pure.zsh, nice:10
+    zplug "sindresorhus/pure", use:pure.zsh, defer:2
 
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
