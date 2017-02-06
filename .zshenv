@@ -10,6 +10,13 @@ export HISTSIZE=1000
 export HISTFILE=~/.zsh_history
 export SAVEHIST=100000
 
+# Mac
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+# Mac Android Debug Bridge
+# PATH="/Users/suzuki.shunsuke/Library/Android/sdk/platform-tools"
+
 export ZPLUG_HOME=$HOME/.zplug
 unset ZPLUG_SHALLOW
 
@@ -58,10 +65,3 @@ then
     eval `ssh-agent` > /dev/null
     export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 fi
-
-# Mac
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-# Mac Android Debug Bridge
-# PATH="/Users/suzuki.shunsuke/Library/Android/sdk/platform-tools"
