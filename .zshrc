@@ -68,10 +68,10 @@ if builtin command -v packer-io > /dev/null; then
 fi
 
 # dircolors
-if [ -f ~/.colorrc ]
-then
-    eval `dircolors ~/.colorrc`
-fi
+# if [ -f ~/.colorrc ]
+# then
+#     eval `dircolors ~/.colorrc`
+# fi
 
 # direnv
 if builtin command -v direnv > /dev/null ; then
