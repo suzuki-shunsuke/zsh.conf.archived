@@ -1,4 +1,3 @@
-
 autoload -Uz compinit
 autoload -Uz colors
 compinit
@@ -52,11 +51,6 @@ autoload -Uz zmv
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
-# dckrm
-if builtin command -v vim > /dev/null; then
-    export DCKRM_EDITOR="vim"
-fi
-
 # vim
 if builtin command -v vim > /dev/null; then
     alias vi="vim"
@@ -74,7 +68,7 @@ fi
 # fi
 
 # direnv
-if builtin command -v direnv > /dev/null ; then
+if builtin command -v direnv > /dev/null; then
     eval "$(direnv hook zsh)"
 fi
 

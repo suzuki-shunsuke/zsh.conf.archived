@@ -41,6 +41,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 # uvbm
 # export UVBM_ROOT="$HOME/.ghq/gitlab.com/suzuki-shunsuke/unite.vim_bookmark"
 
+# dckrm
+if builtin command -v vim > /dev/null; then
+    export DCKRM_EDITOR="vim"
+fi
+
 # Go
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
