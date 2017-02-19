@@ -112,3 +112,7 @@ bindkey '^xf' anyframe-widget-insert-filename
 
 # GVM(Go Version Manager)
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# https://github.com/sindresorhus/pure#my-preprompt-is-missing-when-i-clear-the-screen-with-ctrll 
+# Ctrl + L で pure の prepromptが消える問題への対応
+zle -N clear-screen prompt_pure_clear_screen
