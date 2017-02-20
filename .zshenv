@@ -3,8 +3,12 @@
 # export PATH=hoge:$PATH
 # よって優先度の高いものほど後ろに書く
 
-# プロファイリング
-# zmodload zsh/zprof
+# プロファイリングをする場合はコメントアウトを解除
+# export ZSH_PROFILING=1
+if [ -n "$ZSH_PROFILING" ]
+then
+  zmodload zsh/zprof && zprof
+fi
 
 # Mac
 # path_helper を呼び出していた /etc/profile を読み込まない
