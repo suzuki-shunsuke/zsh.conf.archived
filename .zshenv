@@ -23,7 +23,7 @@ export ZPLUG_HOME=$HOME/.zplug
 unset ZPLUG_SHALLOW
 
 # mac
-export PATH=/usr/local/bin:/usr/sbin:$PATH
+export PATH=/usr/local/bin:/usr/sbin:/sbin:$PATH
 
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
