@@ -1,6 +1,8 @@
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
 autoload -Uz compinit
 autoload -Uz colors
-compinit
+compinit -u
 
 if [ -f ~/.zplug/init.zsh ]
 then
@@ -53,7 +55,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 
 # vim
 if builtin command -v vim > /dev/null; then
-    alias vi="vim"
+    alias vi="nvim"
 fi
 
 # packer-io
