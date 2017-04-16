@@ -76,9 +76,10 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # hub
-# if builtin command -v hub > /dev/null; then
-#     eval "$(hub alias -s)"
-# fi
+if builtin command -v hub > /dev/null; then
+    alias git=hub
+    # eval "$(hub alias -s)"
+fi
 # 
 # anyframe
 bindkey '^xb' anyframe-widget-cdr
