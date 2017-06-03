@@ -28,10 +28,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_SHELL=zsh
 
 # virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
+# export WORKON_HOME=~/.virtualenvs
 
 # vim-virtualenv
-export VIRTUAL_ENV=nvim
+# export VIRTUAL_ENV=nvim
 
 typeset -U path
 path=(
@@ -105,11 +105,11 @@ fi
 # ssh-agentが起動しているものとして何もしない
 # SSH_AUTH_SOCKが設定されていなかったら
 # ssh-agentを起動してSSH_AUTH_SOCKを設定する
-# if [ -z "$SSH_AUTH_SOCK" ]
-# then
-#     eval `ssh-agent` > /dev/null
-#     export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
-# fi
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+    eval `ssh-agent` > /dev/null
+    export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+fi
 
 # dirssh
 # https://github.com/suzuki-shunsuke/dirssh
@@ -121,3 +121,8 @@ fi
 # export PATH=~/bin:$PATH
 
 # export FPATH="$HOME/.ghq/github.com/suzuki-shunsuke/zsh.conf/functions:${FPATH}"
+
+# The next line updates PATH for the Google Cloud SDK.
+test -f /usr/local/lib/google-cloud-sdk/path.zsh.inc && source '/usr/local/lib/google-cloud-sdk/path.zsh.inc'
+# The next line enables shell command completion for gcloud.
+test -f /usr/local/lib/google-cloud-sdk/completion.zsh.inc && source '/usr/local/lib/google-cloud-sdk/completion.zsh.inc'
