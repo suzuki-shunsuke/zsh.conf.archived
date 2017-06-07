@@ -11,13 +11,9 @@ fi
 
 zstyle :zplug:tag depth 1
 
-# git_current_branch() {
-#     git branch | grep "^\* " | sed -e "s/^\* \(.*\)/\1/"
-# }
- 
 if [ $ZPLUG_HOME ]
 then
-    zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
+    # zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
     # zplug "plugins/command-not-found", from:oh-my-zsh
     zplug "zsh-users/zsh-completions"
     # compinit 以降に読み込むようにロードの優先度を変更する（10~19にすれば良い）
@@ -74,6 +70,16 @@ fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# git
+if which ghq > /dev/null; then
+    source `ghq root`/github.com/suzuki-shunsuke/zsh.conf/git.sh
+fi
+
+# docker
+if which docker > /dev/null; then
+    source `ghq root`/github.com/suzuki-shunsuke/zsh.conf/docker.sh
+fi
 
 # hub
 if builtin command -v hub > /dev/null; then
