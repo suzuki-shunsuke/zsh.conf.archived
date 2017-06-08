@@ -25,6 +25,8 @@ alias gpot='git push origin --tags'
 alias gput='git push upstream --tags'
 alias gpoft='git push origin --follow-tags'
 alias gpuft='git push upstream --follow-tags'
+alias gcm='git checkout master'
+alias gco='git checkout'
 
 git-current-branch() {
     git branch | grep "^\* " | sed -e "s/^\* \(.*\)/\1/"

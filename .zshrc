@@ -53,8 +53,10 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 # 
 # vim
-if builtin command -v vim > /dev/null; then
+if builtin command -v nvim > /dev/null; then
     alias vi="nvim"
+    alias vimdiff='nvim -d -u ~/.config/nvim/init.vim'
+    alias vdf='nvim -d -u ~/.config/nvim/init.vim'
 fi
 # 
 # # dircolors

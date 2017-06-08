@@ -93,6 +93,9 @@ if [ -d $PYENV_ROOT ]; then
   eval "$(pyenv init -)"
 fi
 
+# pyenv virtualenv
+eval "$(pyenv virtualenv-init -)"
+
 # rbenv
 # PATH="$HOME/.rbenv/bin:$PATH"
 if [ -d $HOME/.rbenv/bin ]
