@@ -94,6 +94,10 @@ bindkey '^xb' anyframe-widget-cdr
 bindkey '^x^b' anyframe-widget-checkout-git-branch
 bindkey '^xg' anyframe-widget-cd-ghq-repository
 bindkey '^xf' anyframe-widget-insert-filename
+bindkey '^xr' anyframe-widget-execute-history
+# これはfzf の補完とバッティングするのでfzfよりあとに書く
+bindkey '^r' anyframe-widget-execute-history
+bindkey '^xp' anyframe-widget-put-history
 # 
 # # # cabal(Haskell package manager)
 # # if [ -d $HOME/.cabal/bin ]
