@@ -3,3 +3,8 @@
 
 # direnv
 .direnv
+
+# zsh
+.zprofile
+.zshenv
+.zshrc
