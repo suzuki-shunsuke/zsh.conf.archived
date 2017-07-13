@@ -1,0 +1,4 @@
+# docker
+if which docker > /dev/null; then
+    source `ghq root`/github.com/suzuki-shunsuke/zsh.conf/docker.sh
+fi

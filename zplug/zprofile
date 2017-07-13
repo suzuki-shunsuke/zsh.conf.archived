@@ -1,0 +1,2 @@
+export ZPLUG_HOME=$HOME/.zplug
+unset ZPLUG_SHALLOW

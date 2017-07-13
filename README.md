@@ -1,9 +1,16 @@
 # zsh.conf
 
-hubが導入済みな前提
+## Setup
 
 ```
-$ git clone b4b4r07/zplug ~/.zplug
-$ git clone suzuki-shunsuke/zsh.conf ~/.zsh
-ln -s ~/.zsh/.zshrc ~/.zshrc
+$ git clone https://github.com/suzuki-shunsuke/zsh.conf
+$ cd zsh.conf
+$ pip install pip-tools
+$ pip-sync requirements.txt
+```
+
+## Build
+
+```
+$ python main.py
 ```
