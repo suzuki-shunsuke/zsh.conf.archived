@@ -1,0 +1,7 @@
+entry:
+  zprofile:
+    dest: .zprofile
+  zshrc:
+    dest: .zshrc
+  zshenv:
+    dest: .zshenv
