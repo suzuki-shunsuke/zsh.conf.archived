@@ -32,13 +32,13 @@ export PATH
 {% include 'pyenv-virtualenv/zprofile' %}
 {% include 'rbenv/zprofile' %}
 {% include 'ssh-agent/zprofile' %}
-{% include 'vim-virtualenv/zprofile' %}
-{% include 'virtualenvwrapper/zprofile' %}
 {% include 'zplug/zprofile' %}
+{% include 'virtualenvwrapper/zprofile' %}
 {#
   {% include 'android-sdk/zprofile' %}
   {% include 'dckrm/zprofile' %}
   {% include 'dirssh/zprofile' %}
   {% include 'google-cloud-sdk/zprofile' %}
   {% include 'heroku/zprofile' %}
+  {% include 'vim-virtualenv/zprofile' %}
 #}
