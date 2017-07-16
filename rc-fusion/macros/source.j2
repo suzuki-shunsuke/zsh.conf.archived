@@ -1,0 +1,7 @@
+{% macro local(patterns) -%}
+  {% for pattern in globs(*patterns) %}
+source
+{% include pattern %}{# include のあとに空行を入れる #}
+
+  {% endfor %}
+{%- endmacro %}

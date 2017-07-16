@@ -1,0 +1,13 @@
+{% macro includes(args) -%}
+  {% for arg in args %}
+    {% if arg is string %}
+{% include arg %}{# include のあとに空行を入れる #}
+
+    {% else %}
+      {% for s in arg %}
+{% include s %}{# include のあとに空行を入れる #}
+
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{%- endmacro %}

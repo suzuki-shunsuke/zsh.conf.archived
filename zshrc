@@ -1,3 +1,4 @@
+{% from 'rc-fusion/macros/local.j2' import local %}
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # autoload -Uz compinit
@@ -17,21 +18,17 @@ autoload -Uz zmv
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
-{% include 'zplug/zshrc' %}
-{% include 'anyframe/zshrc' %}
-{% include 'direnv/zshrc' %}
-{% include 'docker/zshrc' %}
-{% include 'fzf/zshrc' %}
-{% include 'git/zshrc' %}
-{% include 'gvm/zshrc' %}
-{% include 'hub/zshrc' %}
-{% include 'nvim/zshrc' %}
-{% include 'profile/zshrc' %}
-{% include 'zsh-pure/zshrc' %}
+{{ local([
+  "zplug/zshrc",
+  "**/zshrc", 
+  "!zshrc", 
+  "fzf/zshrc",
+  "anyframe/zshrc",
+]) }}
 
 {#
-{% include 'npm/zshrc' %}
-{% include 'dirssh/zshrc' %}
-{% include 'travis/zshrc' %}
-{% include 'haskel/zshrc' %}
+  {% include 'npm/zshrc' %}
+  {% include 'dirssh/zshrc' %}
+  {% include 'travis/zshrc' %}
+  {% include 'haskel/zshrc' %}
 #}

@@ -1,3 +1,4 @@
+{% from 'rc-fusion/macros/local.j2' import local %}
 # PATHの記述ルール
 # 原則前に書く
 # export PATH=hoge:$PATH
@@ -24,16 +25,7 @@ export PATH
 # export FPATH=~/.ghq/github.com/suzuki-shunsuke/zsh.conf:$FPATH
 # export FPATH="$HOME/.ghq/github.com/suzuki-shunsuke/zsh.conf/functions:${FPATH}"
 
-{% include 'gnu/zprofile' %}
-{% include 'golang/zprofile' %}
-{% include 'history/zprofile' %}
-{% include 'nodebrew/zprofile' %}
-{% include 'pyenv/zprofile' %}
-{% include 'pyenv-virtualenv/zprofile' %}
-{% include 'rbenv/zprofile' %}
-{% include 'ssh-agent/zprofile' %}
-{% include 'zplug/zprofile' %}
-{% include 'virtualenvwrapper/zprofile' %}
+{{ local(["**/zprofile", "!zprofile", "pyenv/zprofile", "pyenv-virtualenv/zprofile"]) }}
 {#
   {% include 'android-sdk/zprofile' %}
   {% include 'dckrm/zprofile' %}

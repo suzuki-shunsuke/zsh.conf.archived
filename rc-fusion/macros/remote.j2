@@ -1,0 +1,6 @@
+{% macro remote(path, patterns) -%}
+  {% for pattern in globs(*patterns) %}
+{% include pattern %}{# include のあとに空行を入れる #}
+
+  {% endfor %}
+{%- endmacro %}
