@@ -25,12 +25,9 @@ export PATH
 # export FPATH=~/.ghq/github.com/suzuki-shunsuke/zsh.conf:$FPATH
 # export FPATH="$HOME/.ghq/github.com/suzuki-shunsuke/zsh.conf/functions:${FPATH}"
 
-{{ local(["**/zprofile", "!zprofile", "pyenv/zprofile", "pyenv-virtualenv/zprofile"]) }}
-{#
-  {% include 'android-sdk/zprofile' %}
-  {% include 'dckrm/zprofile' %}
-  {% include 'dirssh/zprofile' %}
-  {% include 'google-cloud-sdk/zprofile' %}
-  {% include 'heroku/zprofile' %}
-  {% include 'vim-virtualenv/zprofile' %}
-#}
+{{ local([
+  "**/zprofile", "!zprofile",
+  "!android-sdk/zprofile", "!dckrm/zprofile",
+  "!dirssh/zprofile", "!google-cloud-sdk/zprofile",
+  "!heroku/zprofile", "!vim-virtualenv/zprofile",
+  "pyenv/zprofile", "pyenv-virtualenv/zprofile"]) }}
