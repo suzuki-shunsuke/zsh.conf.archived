@@ -24,11 +24,8 @@ add-zsh-hook chpwd chpwd_recent_dirs
   "!zshrc", 
   "fzf/zshrc",
   "anyframe/zshrc",
+  "!npm/zshrc",
+  "!dirssh/zshrc",
+  "!travis/zshrc",
+  "!haskel/zshrc",
 ]) }}
-
-{#
-  {% include 'npm/zshrc' %}
-  {% include 'dirssh/zshrc' %}
-  {% include 'travis/zshrc' %}
-  {% include 'haskel/zshrc' %}
-#}
