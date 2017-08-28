@@ -57,3 +57,8 @@ git-rm-local-merged-branch() {
     done
     git branch --merged master | grep -vE $EXCLUDED_BRANCHS | xargs -I % git branch -d %
 }
+
+git-rm-merged-branch() {
+  git-rm-local-merged-branch $@
+  git-rm-remote-merged-branch $@
+}
