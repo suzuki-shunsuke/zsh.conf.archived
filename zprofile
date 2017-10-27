@@ -22,6 +22,8 @@ path=(
 )
 export PATH
 
+export EDITOR=nvim
+
 # export FPATH=~/.ghq/github.com/suzuki-shunsuke/zsh.conf:$FPATH
 # export FPATH="$HOME/.ghq/github.com/suzuki-shunsuke/zsh.conf/functions:${FPATH}"
 
